@@ -78,10 +78,11 @@ bar.call(foo, 'kevin', 18);
 注意：传入的参数并不确定，这可咋办？
 
 不急，我们可以从 Arguments 对象中取值，取出第二个到最后一个参数，然后放到一个数组里。
+或者用 es6 的解构
 
 ```javascript
-Function.prototype.call2= function() {
-  let [obj,...rest] = arguments
+Function.prototype.call2= function(obj,...rest) {
+  // let rest = Array.call.slice(arguments,1) 
   obj.fn = this
   obj.fn(...rest)
   delete obj.fn

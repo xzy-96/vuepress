@@ -11,7 +11,7 @@ module.exports = {
   themeConfig: {
     subSidebar: "auto",
     nav: [
-      { text: "js", link: "/js/ts.error" },
+      { text: "js", link: "/js/call" },
       { text: "项目工具管理", link: "/build/Monorepo" },
       { text: "css", link: "/css/css" },
       {
