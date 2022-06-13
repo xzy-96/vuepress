@@ -1,3 +1,8 @@
+---
+title:
+author: 净垚
+date: "2022-06-13"
+---
 ## debounce
 防抖的原理: 在事件触发 n 秒后才执行，如果你在一个事件触发的 n 秒内又触发了这个事件，那我就以新的事件的时间为准
 ## 为什么要debounce
@@ -5,8 +10,9 @@
 1. window 的 resize、scroll
 2. mousedown、mousemove
 3. keyup、keydown
-……
-举个例子
+4. ……
+
+ 举个例子
 ```javascript
 <!DOCTYPE html>
 <html lang="en">
@@ -61,7 +67,7 @@ function debounce(fn,wait) {
 }
 container.onmousemove =debounce(getUserAction,1000) ;
 ```
-但是 getUserAction 的this是windon
+但是 getUserAction 的this是window
 
 ### 第二版 this
 
@@ -90,6 +96,7 @@ function debounce(fn,wait) {
 }
 container.onmousemove =debounce(getUserAction,1000) ;
 ```
+
 
 ### 立即执行
 

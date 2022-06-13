@@ -16,11 +16,11 @@ module.exports = {
       { text: "css", link: "/css/css" },
       {
         text: "净垚的GitHub",
-        items: [{ text: "Github", link: "" }],
+        items: [{ text: "Github", link: "https://github.com/xzy-96" }],
       },
     ],
     sidebar: {
-      "/js/": ["call", "bind"],
+      "/js/": ["call", "bind", "debounce"],
       "/build/": ["Monorepo", "patch-package"],
       "/css/": ["css"],
     },
