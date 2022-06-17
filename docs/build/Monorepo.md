@@ -1,10 +1,10 @@
 ---
-title:
+title: Monorepo
 author: 净垚
 date: "2022-05-31"
 ---
 
-## Monorepo
+
 
 Monorepo 是管理项目代码的方式之一，指在一个大的项目仓库（repo）中 管理多个模块/包（package），这种类型的项目大都在项目根目录下有一个 packages 文件夹，分多个项目管理。大概结构如下：
 

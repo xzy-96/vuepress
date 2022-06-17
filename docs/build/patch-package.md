@@ -1,10 +1,10 @@
 ---
-title:
+title: patch-package
 author: 净垚
 date: "2022-05-31"
 ---
 
-## patch-package
+
 
 - 工作中发现 element-plus 有 bug ,然后时间又紧，想自己改好然后就去 改 node_modules 里的源码 ，但改了源码 其他人就用不了 这时候我们的主角登场了 patch-package
 

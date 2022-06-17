@@ -1,9 +1,9 @@
 ---
-title:
+title: call 和 apply
 author: 净垚
 date: "2022-06-06"
 ---
-## bind 和 apply
+
 `**call()**` 方法使用一个指定的 `this` 值和单独给出的一个或多个参数来调用一个函数。
 
 ```

@@ -20,7 +20,7 @@ module.exports = {
       },
     ],
     sidebar: {
-      "/js/": ["call", "bind", "debounce"],
+      "/js/": ["call", "bind", "debounce", "http"],
       "/build/": ["Monorepo", "patch-package"],
       "/css/": ["css"],
     },
