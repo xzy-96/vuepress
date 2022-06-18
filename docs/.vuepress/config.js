@@ -11,16 +11,16 @@ module.exports = {
   themeConfig: {
     subSidebar: "auto",
     nav: [
-      { text: "js", link: "/js/ts.error" },
+      { text: "js", link: "/js/call" },
       { text: "项目工具管理", link: "/build/Monorepo" },
       { text: "css", link: "/css/css" },
       {
         text: "净垚的GitHub",
-        items: [{ text: "Github", link: "" }],
+        items: [{ text: "Github", link: "https://github.com/xzy-96" }],
       },
     ],
     sidebar: {
-      "/js/": ["/js/ts.error"],
+      "/js/": ["call", "bind", "debounce", "http"],
       "/build/": ["Monorepo", "patch-package"],
       "/css/": ["css"],
     },
