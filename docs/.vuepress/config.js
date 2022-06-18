@@ -20,7 +20,16 @@ module.exports = {
       },
     ],
     sidebar: {
-      "/js/": ["call", "bind", "debounce", "http"],
+      "/js/": [
+        "call",
+        "bind",
+        "debounce",
+        "http",
+        "dataurl",
+        "lazy-img",
+        "polymorphism",
+        "a-download",
+      ],
       "/build/": ["Monorepo", "patch-package"],
       "/css/": ["css"],
     },
