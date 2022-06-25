@@ -1,7 +1,7 @@
 ---
 title: 中介模式
 author: 净垚
-date: "2022-06-2"
+date: "2022-06-26"
 ---
 泡泡堂
 在游戏之初只有只支持两个玩家同时进行对战
@@ -200,8 +200,8 @@ var playerDirector = (function(){
         }
       }
       var reciveMessage = function() {
-        var message = Array.prototype.shift.call(arguments)
-        operations[message].apply(this,arguments)
+        var message = Array.prototype.shift.call(arguments) // 取出第一个参数 ['removePlayer',this] 
+        operations[message].apply(this,arguments)// [this] player
       }
       return {
         reciveMessage
