@@ -32,6 +32,7 @@ module.exports = {
         "encapsulation",
         "inheritance",
         "strategy",
+        "mediation",
       ],
       "/build/": ["Monorepo", "patch-package"],
       "/css/": ["css"],
