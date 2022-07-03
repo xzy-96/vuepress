@@ -35,7 +35,7 @@ module.exports = {
         "mediation",
       ],
       "/build/": ["Monorepo", "patch-package"],
-      "/css/": ["css"],
+      "/css/": ["css", "bfc"],
     },
   },
 };

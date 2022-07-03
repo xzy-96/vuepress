@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        width: 100px;
+        height: 100px;
+        background: lightblue;
+        float: left;
+      }
+      /* div {
+        overflow: hidden;
+      } */
+      .box {
+        width: 200px;
+        height: 200px;
+        background: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+
+    <div style="border: 1px solid #000">
+      <p>3</p>
+    </div> -->
+    <div style="border: 1px solid #000">
+      <p>我是浮动元素p</p>
+      <div class="box">
+        我是div 没有设置浮动 没有触发bfc 我是div 没有设置浮动 没有触发bfc我是div
+        没有设置浮动 没有触发bfc
+      </div>
+    </div>
+  </body>
+</html>
