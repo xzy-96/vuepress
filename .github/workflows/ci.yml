@@ -1,0 +1,13 @@
+name: do sh
+on:
+  push:
+    branches:
+      - main
+jobs:
+  repo-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: do deploy.sh
+        uses: xu-96/learn-vuepress@master
+      - run: sudo ../deploy.sh
+       debug: true

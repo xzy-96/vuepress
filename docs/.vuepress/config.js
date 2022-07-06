@@ -33,7 +33,7 @@ module.exports = {
         "inheritance",
         "strategy",
         "mediation",
-        "index1",
+        "index",
       ],
       "/build/": ["Monorepo", "patch-package"],
       "/css/": ["css", "bfc"],
