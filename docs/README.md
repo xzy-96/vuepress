@@ -1,17 +1,15 @@
 ---
-title: 加强基础
+title: html基础
 author: 净垚
-date: "2022-07/4"
+date: "2022-07-04"
 ---
 
-## 记录 我学习过的技术 加深影响
-
-### src 和 href 的区别
+## src 和 href 的区别
 
 - src 引入资源 会导致 js 阻塞 ，所以一般放到 页面底部
-- href 表示超文本引入 当浏览器识别到会 异步下载资源
+- href 表示超文本引入 当浏览器识别到会 `异步`下载资源
 
-### 对 html 语义化
+## 对 html 语义化
 
 - 可读性更好 解构清晰
 - 便于 SEO
@@ -32,18 +30,18 @@ date: "2022-07/4"
 <footer>底部</footer>
 ```
 
-### DOCTYPE(⽂档类型) 的作⽤
+## DOCTYPE(⽂档类型) 的作⽤
 
 DOCTYPE 是 HTML5 中一种标准通用标记语言的文档类型的声明，它告诉浏览器应该以什么样的文档类型定义来解析文档 （html 或 XHTML），浏览器渲染页面有两种模式（可通过 document.compatMode 获取）
 
 - 标准模式 浏览器使用 W3C 的标准解析渲染页面。以其最高标准呈现页面
 - 怪异模式 浏览器使用自己的怪异模式解析渲染页面 以`向后兼容`的方式显示
 
-### script 标签中 defer 和 async 的区别
+## script 标签中 defer 和 async 的区别
 
 defer 是等页面加载完 在加载 async 是并发的进行的 `执行顺序` 多个 async 是异步加载并不知道顺序的
 
-### 常用的 meta 标签有哪些
+## 常用的 meta 标签有哪些
 
 meta 标签 由 name 和 content 属性定义 `用来描述网页文档的属性`
 常用的有
@@ -87,7 +85,7 @@ meta 标签 由 name 和 content 属性定义 `用来描述网页文档的属性
 - minimum-scale ：最小缩放比例
 - user-scalable ：是否允许用户缩放(yes/no）
 
-### HTML5 有哪些更新
+## HTML5 有哪些更新
 
 1. 媒体标签
 
@@ -124,7 +122,7 @@ loop=‘true’ 循环播放
 </video>
 ```
 
-### 7. img 的 srcset 属性的作⽤
+## 7. img 的 srcset 属性的作⽤
 
 不同设备屏幕 显示不同的图片
 
@@ -136,13 +134,13 @@ loop=‘true’ 循环播放
 
 srcset 是用来指定图片的地址和 对应的质量。 sizes 用来设置图片的尺寸零界点，浏览器会自动选择最小的可用图片
 
-### 8. 行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？
+## 8. 行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？
 
 行内元素： a b span img input
 块级元素： p h1 div ul li dt dl dd
 空元素，即没有内容的 HTML 元素： br hr img input
 
-### 说一下 web worker
+## 说一下 web worker
 
 worker 是独立于后台的 不用影响主线程 并通过 postMessage 将回调返回给主线程
 
@@ -207,7 +205,7 @@ timedCount();
 </html>
 ```
 
-#### Web Workers 和 DOM
+### Web Workers 和 DOM
 
 由于 web worker 位于外部文件中，它们无法访问下列 JavaScript 对象：
 
@@ -215,12 +213,12 @@ window 对象
 document 对象
 parent 对象
 
-### 浏览器是如何对 HTML5 的离线储存资源进行管理和加载？
+## 浏览器是如何对 HTML5 的离线储存资源进行管理和加载？
 
 - 在线情况下 浏览器发现 html 头部有 mainfest 属性 然后请求当前路径下的 mainfest 文件 如果是第一次请求 就会离线存储 如果不是第一次 就会对比新的和旧的是否相同 相同不做操作
 - 离线情况 直接用浏览器离线缓存资源
 
-### 13. iframe 有那些优点和缺点？
+## 13. iframe 有那些优点和缺点？
 
 优点
 
@@ -234,6 +232,6 @@ parent 对象
 - 无法被搜索引擎识别
 - 产生很多页面 不好管理
 
-### Canvas 和 SVG 的区别
+## Canvas 和 SVG 的区别
 
 svg 可缩放的矢量图 基于 xml 描述的 2D 图形语言
