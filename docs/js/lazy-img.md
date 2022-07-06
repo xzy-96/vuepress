@@ -1,11 +1,9 @@
 ---
-
 title: lazy-img
 
 author: 净垚
 
 date: "2022-06-18"
-
 ---
 
 ## 方案一: 位置计算 + 滚动事件 (Scroll) + DataSet API
@@ -98,9 +96,7 @@ observer.observe(img);
 如在 `next.js v9` 中，会对视口内的资源做预加载，可以参考 [next 9 production optimizations(opens new window)](https://nextjs.org/blog/next-9#production-optimizations)
 
 ```jsx
-<Link href="/about">
-  <a>关于山月</a>
-</Link>
+<Link href="/about"></Link>
 ```
 
 ## [#](https://q.shanyue.tech/fe/html/1.html#方案四-lazyloading-属性)方案四: LazyLoading 属性
@@ -181,8 +177,6 @@ https://github.com/hwb2017)
   </body>
 </html>
 ```
-
-
 
 方案一的实现[demo (opens new window)](https://codesandbox.io/s/manual-image-lazy-6zzhr?file=/index.html)，ScrollListener 类用于监听和处理滚动，在 Controller（实现 onEnterViewport 方法）元素出现在视窗内时调用 controller.onEnterViewport()，最后移除 controller。
 
@@ -411,8 +405,6 @@ https://github.com/hwb2017)
   </script>
 </html>
 ```
-
-
 
 方案二有那么一点点抖动，这里重新实现了一下
 
