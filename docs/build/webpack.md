@@ -79,3 +79,84 @@ externals:{
 
 
 ```
+
+## 如何提⾼ webpack 的打包速度**?**
+
+- 优化 Loader
+  Babel 会将代码生成 ast ,ast 继续转换新的代码 项目越大 转换的代码就越大 效率就越低
+
+  1. 优化 loader 首先可以从路径开始 通过 include 设置只找 src 下的文件 exclude 排除 node_modules 还可以将 babel 编译的文件缓存起来 下次值编译改动的文件
+
+  ```js
+  module.exports = {
+    module: {
+      rules: [
+        {
+          // js 文件才使用 babel
+          test: /\.js$/,
+          loader: "babel-loader?cacheDirectory=true", // 配置缓存
+          // 只在 src 文件夹下查找
+          include: [resolve("src")],
+          // 不会去查找的路径
+          exclude: /node_modules/,
+        },
+      ],
+    },
+  };
+  ```
+
+  2. HappyPack （webpack4 ） webpack5 Thread-loader
+     当项目很大是 Webpack 在打包的过程中是单线程的速度就会很慢 HappyPack 是多线程打包 它 可以将 Loader 的同步执行转换为并行的
+     但是 现在作者没有维护了
+     webpack5 官网推出了 Thread-loader 跟 HappyPack 类似
+
+  3. DllPlugin
+     DllPlugin 可以将 特定的库提前打包引入 这样就减少了打包次数 比如 你用了 vue 他一般我们是不会更新的
+
+  ```js
+  // 单独配置在一个文件中
+  // webpack.dll.conf.js
+  const path = require("path");
+  const webpack = require("webpack");
+  module.exports = {
+    entry: {
+      // 想统一打包的类库
+      vendor: ["react"],
+    },
+    output: {
+      path: path.join(__dirname, "dist"),
+      filename: "[name].dll.js",
+      library: "[name]-[hash]",
+    },
+    plugins: [
+      new webpack.DllPlugin({
+        // name 必须和 output.library 一致
+        name: "[name]-[hash]",
+        // 该属性需要与 DllReferencePlugin 中一致
+        context: __dirname,
+        path: path.join(__dirname, "dist", "[name]-manifest.json"),
+      }),
+    ],
+  };
+  ```
+
+然后需要执行这个配置文件生成依赖文件，接下来需要使用 DllReferencePlugin 将依赖文件引入项目中
+
+```js
+// webpack.conf.js
+module.exports = {
+  // ...省略其他配置
+  plugins: [
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      // manifest 就是之前打包出来的 json 文件
+      manifest: require("./dist/vendor-manifest.json"),
+    }),
+  ],
+};
+```
+
+3. 代码压缩
+
+在 Webpack3 中，一般使用 UglifyJS 来压缩代码，但是这个是单线程运行的，为了加快效率，可以使用 webpack-parallel-uglify-plugin 来并行运行 UglifyJS，从而提高效率
+在 Webpack4 中，不需要以上这些操作了，只需要将 mode 设置为 production 就可以默认开启以上功能。代码压缩也是我们必做的性能优化方案，当然我们不止可以压缩 JS 代码，还可以压缩 HTML、CSS 代码，并且在压缩 JS 代码的过程中，我们还可以通过配置实现比如删除 console.log 这类代码的功能。

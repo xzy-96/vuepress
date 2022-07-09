@@ -176,7 +176,7 @@ object 会调用 toString()
 
 除了 date 对象 是 string 其他都是 Number
 
-### + 操作符
+## + 操作符
 
 只要有一边是字符串 两边都会转换成 string 类型其他情况下两边的变量都会被转换为数字。
 
@@ -189,4 +189,39 @@ Symbol() + "1"; // 报错 不能隐式转换
 
 Number(Symbol()); // 报错 不能转换成数字
 String(Symbol()); // 'Symbol()'
+```
+
+## Object.is() 与比较操作符 “===”、“==” 的区别？
+
+== 会类型转换 在比较两个值是否相等
+=== 比较类型和值是否相等
+Object.is() 和=== 是差不多的 但是 -0 和 +0 他们是不相等的 NaN 是相等的
+
+## 什么是 JavaScript 中的包装类型？
+
+在 js 中基础类型 是没有属性和方法的 但是为了方便调试 当我们调用的它的属性和方法是 会隐式的转成对象
+
+## Object.assign 和 扩展运算符
+
+```js
+let outObj = {
+  inObj: { a: 1, b: 2 },
+};
+let outObj2 = {
+  inObj: { a: 3, b: 2 },
+  b: 2,
+};
+var newObj = { ...outObj };
+// {
+//   inObj: {a: 1, b: 2}
+// }
+var newObj2 = Object.assign(outObj, outObj2);
+// {
+//   inObj: {a: 3, b: 2},
+//   b:2
+// }
+newObj2.inObj.b = 5;
+
+// outObj和outObj2 都会改变
+newObj2.b = 6; // 基本类型 直接赋值 所以outObj2.b 是不会改变的
 ```
