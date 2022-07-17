@@ -34,9 +34,10 @@ module.exports = {
         "strategy",
         "mediation",
         "base",
+        "new",
       ],
       "/build/": ["Monorepo", "patch-package"],
-      "/css/": ["css", "bfc"],
+      "/css/": ["css", "bfc", "clamp"],
     },
   },
 };

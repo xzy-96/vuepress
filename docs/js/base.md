@@ -225,3 +225,19 @@ newObj2.inObj.b = 5;
 // outObj和outObj2 都会改变
 newObj2.b = 6; // 基本类型 直接赋值 所以outObj2.b 是不会改变的
 ```
+
+### 垃圾回收机制
+
+
+## 页面生命周期
+
+- DOMContentLoaded
+html 加载完成 并构建了DOM 树 但外部资源 还没加载完 比如图片
+
+- load 
+浏览器不仅加载完成了 HTML，还加载完成了所有外部资源：图片，样式等
+- beforeunload/unload
+
+当用户正在离开页面时。
+
+
